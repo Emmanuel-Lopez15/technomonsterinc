@@ -920,36 +920,41 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-              data-aos-delay="500">
-              <div class="row gy-4">
+          <form id="contact-form" action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+  <div class="row gy-4">
 
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Tu Nombre" required="">
-                </div>
+    <div class="col-md-6">
+      <input type="text" name="name" class="form-control" placeholder="Tu Nombre" required>
+    </div>
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Tu Correo" required="">
-                </div>
+    <div class="col-md-6">
+      <input type="email" class="form-control" name="email" placeholder="Tu Correo" required>
+    </div>
 
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Asunto" required="">
-                </div>
+    <div class="col-md-12">
+      <input type="text" class="form-control" name="subject" placeholder="Asunto" required>
+    </div>
 
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="4" placeholder="Mensaje" required=""></textarea>
-                </div>
+    <div class="col-md-12">
+      <textarea class="form-control" name="message" rows="4" placeholder="Mensaje" required></textarea>
+    </div>
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Cargando</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Tu mensaje ha sido enviado con éxito. ¡Gracias!</div>
+    <div class="col-md-12 text-center">
+      <div class="sent-message" style="display:none;">Tu mensaje ha sido enviado con éxito. ¡Gracias!</div>
+      <button type="submit">Enviar Mensaje</button>
+    </div>
 
-                  <button type="submit">Enviar Mensaje</button>
-                </div>
+  </div>
+</form>
 
-              </div>
-            </form>
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Evita el envío real
+
+  // Mostrar solo el mensaje de éxito
+  this.querySelector(".sent-message").style.display = "block";
+});
+</script>
           </div><!-- End Contact Form -->
 
         </div>
